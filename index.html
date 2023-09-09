@@ -1,0 +1,97 @@
+<html> 
+	<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator - The One You Need </title>
+
+		<style>
+			#main{width: 300px; height : 280px; background-color : black;}
+			input{width: 20% ; height: 40px; font-size:20px; margin: 6px}
+			#bg{width:96%; height:50px; background-color: silver;}
+		</style>
+    
+	</head>
+	<body>
+		<div id="main">
+		<form name="f">
+			<input type="text" name="calcspace" placeholder = "0" id="bg"> <br>
+			<input type="button" value="1" onclick="f.calcspace.value+=1">
+			<input type="button" value="2" onclick="f.calcspace.value+=2">
+			<input type="button" value="3" onclick="f.calcspace.value+=3"> 
+			<input type="button" value="+" onclick="add()">
+			<br>
+			<input type="button" value="4" onclick="f.calcspace.value+=4">
+			<input type="button" value="5" onclick="f.calcspace.value+=5">
+			<input type="button" value="6" onclick="f.calcspace.value+=6">
+			<input type="button" value="-" onclick="sub()">
+			<br>
+			<input type="button" value="7" onclick="f.calcspace.value+=7">
+			<input type="button" value="8" onclick="f.calcspace.value+=8">
+			<input type="button" value="9" onclick="f.calcspace.value+=9">
+			<input type="button" value="x" onclick="multiply()">
+			<br>
+			<input type="button" value="c" onclick="f.calcspace.value=''">
+			<input type="button" value="0" onclick="f.calcspace.value+=0">
+			<input type="button" value="=" onclick="f.calcspace.value=eval(f.calcspace.value)">
+			<input type="button" value="/" onclick="div()">
+		</form>
+		</div>
+
+		<script> 
+			function add(){
+				var a = 0, b = 0;
+				a = f.calcspace.value;
+				b = a.charAt(a.length-1);
+				if (b == '+' || b == '-' || b == '*' || b == '/') {
+					f.calcspace.value = a.substring(0,a.length-1);
+					f.calcspace.value+='+';
+				}
+				else { 
+					f.calcspace.value+='+';
+				}
+			}
+		
+			function div(){
+				var a = 0, b = 0;
+				a = f.calcspace.value;
+				b = a.charAt(a.length-1);
+				if (b == '+' || b == '-' || b == '*' || b == '/') {
+					f.calcspace.value = a.substring(0,a.length-1);
+					f.calcspace.value+='/';
+				}
+				else { 
+					f.calcspace.value+='/';
+				}
+			}
+
+			function sub(){
+				var a = 0, b = 0;
+				a = f.calcspace.value;
+				b = a.charAt(a.length-1);
+				if (b == '+' || b == '-' || b == '*' || b == '/') {
+					f.calcspace.value = a.substring(0,a.length-1);
+					f.calcspace.value+='-';
+				}
+				else { 
+					f.calcspace.value+='-';
+				}
+			}
+
+			function multiply(){
+				var a = 0, b = 0;
+				a = f.calcspace.value;
+				b = a.charAt(a.length-1);
+				if (b == '+' || b == '-' || b == '*' || b == '/') {
+					f.calcspace.value = a.substring(0,a.length-1);
+					f.calcspace.value+='*';
+				}
+				else { 
+					f.calcspace.value+='*';
+				}
+			}
+
+		</script>
+			
+	
+	</body>
+</html>
